@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <style>
+        body {
+            background-color: rgb(108, 137, 161);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1px;
+        }
+
+        h1 {
+            font-size: 30px;
+        }
+        /* Styles for the sidebar */
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            background-color: #333333;
+            padding-top: 50px;
+            transition: left 0.3s ease-in-out;
+        }
+
+        .sidebar a {
+            padding: 20px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #fff;
+            display: block;
+        }
+
+        .sidebar a:hover {
+            background-color: #555;
+        }
+
+        /* Button to open the sidebar */
+        #openBtn {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            font-size: 25px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Button to close the sidebar */
+        #closeBtn {
+            position: absolute;
+            top: 20px;
+            left: 10px;
+            font-size: 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .productList span{
+            font-size: 20px;
+            padding: 18px;
+        }
+        .productList{
+            text-align: center;
+            margin-top:5px;
+            
+        }
+        .productList li{
+            list-style: none;
+        }
+        /* #addProductsForm {
+            display: flex;
+            flex-direction: column;
+            align-items:;
+            text-align: center;
+        } */
+        .head{
+            display: flex;
+            gap:15px;
+            justify-content: center;
+            text-align: center;
+            /* margin-top: 10px; */
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>List of Products</h1>
+    <div id="display-data">
+        <!-- Display submitted data here -->
+    </div>
+
+</header>
+<!-- Button to open the sidebar -->
+<button id="openBtn" onclick="openSidebar()">☰</button>
+
+<!-- Sidebar -->
+<div class="sidebar" id="mySidebar">
+    <button id="closeBtn" onclick="closeSidebar()">✕</button>
+    <a href="index.html">Add Products</a>
+    <a href="#" onclick="toggleForm()">Show Products</a>
+</div>
+<div class="head">
+    <h3>Product</h3>
+<h3>Quantity</h3>
+<h3>Price</h3>
+</div>
+
+<ul class="productList">
+    <li class="productItem">
+        <span class="productName"></span>
+        <span class="productQuantity"></span>
+        <span class="productPrice"></span>
+    </li>
+</ul>
+<script src="script.js"></script>
+<script src="show.js"></script>
+</body>
+</html>

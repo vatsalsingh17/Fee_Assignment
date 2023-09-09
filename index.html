@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Example</title>
+    <style>
+        /* Styles for the sidebar */
+        body {
+            background-color: rgb(108, 137, 161);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1px;
+        }
+
+        .container {
+            max-width:500px;
+            margin: 0 auto;
+            padding: 20px;
+            margin-top: -120px;
+            display:flex;
+            flex-direction: column;
+            align-items: center; /* Center horizontally */
+            justify-content: center; /* Center vertically */
+            height: 100vh; /* Full viewport height */
+            
+        }
+
+        h1 {
+            font-size: 30px;
+        }
+
+        /* Center-align product headings */
+        .product-heading {
+            text-align: center;
+            color: #fff;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* Style the input fields */
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 6px;
+            margin: 5px 0;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Style the "Add" button */
+        .add-button {
+            background-color: #373734;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        .add-button:hover {
+            background-color: #27ae60;
+        }
+
+        /* Styles for the sidebar */
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            background-color: #333333;
+            padding-top: 50px;
+            transition: left 0.3s ease-in-out;
+        }
+
+        .sidebar a {
+            padding: 20px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #fff;
+            display: block;
+        }
+
+        .sidebar a:hover {
+            background-color: #555;
+        }
+
+        /* Button to open the sidebar */
+        #openBtn {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            font-size: 25px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Button to close the sidebar */
+        #closeBtn {
+            position: absolute;
+            top: 20px;
+            left: 10px;
+            font-size: 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+         /* #addProductsForm {
+            display: flex;
+            flex-direction: column;
+            align-items:;
+            text-align: center;
+        }  */
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>My Products</h1>
+
+</header>
+
+<!-- Button to open the sidebar -->
+<button id="openBtn" onclick="openSidebar()">☰</button>
+
+<!-- Sidebar -->
+<div class="sidebar" id="mySidebar">
+    <button id="closeBtn" onclick="closeSidebar()">✕</button>
+    <a href="#" onclick="toggleForm()">Add Products</a>
+    <a href="show.html">Show Products</a>
+</div>
+
+<!-- Content area for the form -->
+<div class="container">
+    <div id="addProductsForm" style="display:none;">
+        <form class="myForm" action="show.html" method="get">
+            <div class="product-heading"></div>
+            <label for="productName">Product Name:</label>
+            <input type="text"  class="name" name="productName">
+
+            <label for="productQuantity">Quantity:</label>
+            <input type="number"  class="quantity" name="productQuantity">
+
+            <label for="productPrice">Price:</label>
+            <input type="number" class="price" name="productPrice">
+            
+            <button type="submit" class="add-button">Add Product</button>
+            
+            
+        </form>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
